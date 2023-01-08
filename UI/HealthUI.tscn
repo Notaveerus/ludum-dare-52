@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/HealthUI.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/heart_empty.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/heart.png" type="Texture" id=3]
+[ext_resource path="res://UI/pixelart.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 31
+outline_size = 2
+outline_color = Color( 0.0431373, 0.0156863, 0.0156863, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="HealthUI" type="Control"]
+margin_right = 64.0
+margin_bottom = 36.0
+script = ExtResource( 1 )
+
+[node name="HeartUIEmpty" type="TextureRect" parent="."]
+margin_right = 128.0
+margin_bottom = 33.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="HeartUIFull" type="TextureRect" parent="."]
+margin_right = 128.0
+margin_bottom = 33.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="PartsCounter" type="Label" parent="."]
+margin_left = 974.0
+margin_top = 9.0
+margin_right = 1014.0
+margin_bottom = 49.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0.933333, 0.937255, 0.945098, 1 )
+text = "0"
+align = 1
+valign = 1
